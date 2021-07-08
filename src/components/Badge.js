@@ -22,8 +22,20 @@ class Badge extends React.Component{
     }
 
     render(){
+        const hasItems = this.state.cantidad > 0
+
+        const styles = {
+
+            border: '1px solid black',
+            'margin-bottom': '1em',
+            'border-radius': '0.5em',
+            background: hasItems ? 'linear-gradient(45deg, black, #4a02f7)' : '#FFFFFF',
+            color: hasItems ? '#FFFFFF' : '#000',
+            transition: 'all 400ms ease-out'
+        }
+
         return(
-            <div>
+            <div style={styles}>
                 <h3>{this.props.name}</h3>
                 <hr/>
                 <div>Cantidad : {this.state.cantidad}</div>
